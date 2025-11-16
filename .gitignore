@@ -1,0 +1,33 @@
+# Windows system junk
+[Aa]pp[Dd]ata/
+Cookies/
+Documents/My Music/
+Documents/My Pictures/
+Documents/My Videos/
+Local Settings/
+My Documents/
+NetHood/
+PrintHood/
+Recent/
+SendTo/
+Start Menu/
+Templates/
+
+# General IDE/OS files
+.DS_Store
+Thumbs.db
+
+# Project-specific files to ignore (MERN stack common)
+node_modules
+/dist
+/build
+.env
+.idea
+.vscode
+
+# Android Studio/Emulator files (based on your output)
+.android/
+.gradle/
+.docker/
+.cache/
+.expo/
