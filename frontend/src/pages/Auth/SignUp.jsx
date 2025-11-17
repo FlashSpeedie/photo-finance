@@ -102,14 +102,14 @@ const SignUpPage = () => {
                             value={fullName}
                             onChange={({ target }) => setFullName(target.value)}
                             label="Full Name"
-                            placeholder="John"
+                            placeholder="John Doe"
                             type="text"
                         />
                         <Input
                             value={email}
                             onChange={({ target }) => setEmail(target.value)}
                             label="Email Address"
-                            placeholder="john@example.com"
+                            placeholder="johndoe@example.com"
                             type="text"
                         />
                         <Input

@@ -12,41 +12,37 @@ import Income from './pages/Dashboard/Income';
 import Expense from './pages/Dashboard/Expense';
 import Profile from './pages/Dashboard/Profile';
 
-import UserProvider from './context/index.jsx';
+import { UserProvider } from "./context";
 import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
     <UserProvider>
-      <div>
-        <Router>
-          <Routes>
-            <Route path="/" element={<Root />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/dashboard" element={<Home />} />
-            <Route path="/income" element={<Income />} />
-            <Route path="/expense" element={<Expense />} />
-            <Route path="/profile" element={<Profile />} />
-          </Routes>
-        </Router>
-      </div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Root />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/dashboard" element={<Home />} />
+          <Route path="/income" element={<Income />} />
+          <Route path="/expense" element={<Expense />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
 
-      <Toaster
-        toastOptions={{
-          className: "",
-          style: {
-            fontSize: '13px'
-          },
-        }}
-      />
+        <Toaster
+          toastOptions={{
+            style: {
+              fontSize: '13px'
+            }
+          }}
+        />
+      </Router>
     </UserProvider>
-  )
+  );
 }
 
 const Root = () => {
   const isAuthenticated = !!localStorage.getItem('token');
-
   return isAuthenticated ? (
     <Navigate to="/dashboard" replace />
   ) : (

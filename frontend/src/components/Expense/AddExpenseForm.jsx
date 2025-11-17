@@ -3,13 +3,8 @@ import Input from "../Inputs/Input";
 import EmojiPickerPopup from "../EmojiPickerPopup";
 
 const AddExpenseForm = (props) => {
-    const { onAddExpense } = props;
-    const [expense, setExpense] = useState({
-        category: "",
-        amount: "",
-        date: "",
-        icon: "",
-    });
+    const { onAddExpense, initialData = { category: "", amount: "", date: "", icon: "" } } = props;
+    const [expense, setExpense] = useState(initialData);
 
     const handleChange = (key, value) => setExpense({ ...expense, [key]: value });
 

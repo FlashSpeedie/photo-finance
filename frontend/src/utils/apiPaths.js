@@ -1,4 +1,4 @@
-export const BASE_URL = "https://photo-finance.onrender.com";
+export const BASE_URL = "https://financeplanner-backend.vercel.app";
 
 export const API_PATHS = {
   AUTH: {

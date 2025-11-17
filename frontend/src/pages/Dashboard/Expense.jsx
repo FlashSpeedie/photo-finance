@@ -21,14 +21,12 @@ const ExpensePage = () => {
     });
     const [openAddExpenseModal, setOpenAddExpenseModal] = useState(false);
 
-    // Get All Expense Transactions
     const fetchExpenseTransactions = async () => {
         if (loading) return;
         setLoading(true);
 
         try {
             const response = await axiosInstance.get(API_PATHS.EXPENSE.GET_ALL_EXPENSE);
-
             if (response.data) {
                 setExpenseData(response.data);
             }
@@ -39,20 +37,21 @@ const ExpensePage = () => {
         }
     };
 
-    const handleAddExpense = async (expense) => {
+    const handleAddExpense = async (expense, isScan = false) => {
         const { category, amount, date, icon } = expense;
+        
         if (!category.trim()) {
-            toast.error("Category is required!");
+            if (!isScan) toast.error("Category is required!");
             return;
         }
 
         if (!amount || isNaN(amount) || Number(amount) <= 0) {
-            toast.error("Amount must be a valid number greater than 0!");
+            if (!isScan) toast.error("Amount must be a valid number greater than 0!");
             return;
         }
 
         if (!date) {
-            toast.error("Date is required!");
+            if (!isScan) toast.error("Date is required!");
             return;
         }
 
@@ -64,19 +63,26 @@ const ExpensePage = () => {
                 icon,
             });
 
-            setOpenAddExpenseModal(false);
+            if (!isScan) { 
+                setOpenAddExpenseModal(false);
+            }
+            
             toast.success("Expense added successfully!");
             fetchExpenseTransactions();
         } catch (error) {
             console.error("Error adding expense:", error);
+            toast.error("Failed to add expense.");
+            if (isScan) throw error; 
         }
     };
 
-    // Handle Delete Expense
+    const handleScanSubmit = (expenseData) => {
+        return handleAddExpense(expenseData, true);
+    };
+
     const deleteExpense = async (id) => {
         try {
             await axiosInstance.delete(API_PATHS.EXPENSE.DELETE_EXPENSE(id));
-
             setOpenDeleteAlert({ show: false, data: null });
             toast.success("Expense deleted successfully!");
             fetchExpenseTransactions();
@@ -85,7 +91,6 @@ const ExpensePage = () => {
         }
     };
 
-    // Handle download expense details
     const handleDownloadExpenseDetails = async () => {
         try {
             const response = await axiosInstance.get(API_PATHS.EXPENSE.DOWNLOAD_EXPENSE, {
@@ -108,7 +113,6 @@ const ExpensePage = () => {
 
     useEffect(() => {
         fetchExpenseTransactions();
-        return () => { };
     }, []);
 
     return (
@@ -118,7 +122,8 @@ const ExpensePage = () => {
                     <div className="">
                         <ExpenseOverview
                             transactions={expenseData}
-                            onAddExpense={() => setOpenAddExpenseModal(true)}
+                            onAddExpense={() => setOpenAddExpenseModal(true)} 
+                            onExpenseSubmit={handleScanSubmit} 
                         />
                     </div>
 
