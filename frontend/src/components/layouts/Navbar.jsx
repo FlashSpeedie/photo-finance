@@ -22,7 +22,7 @@ const Navbar = (props) => {
             </button>
 
             <Link to="/dashboard">
-                <h2 className="text-lg font-medium text-black">Photo Finance</h2>
+                <h2 className="text-lg font-medium text-black">Expense Tracker</h2>
             </Link>
 
             {openSideMenu && (

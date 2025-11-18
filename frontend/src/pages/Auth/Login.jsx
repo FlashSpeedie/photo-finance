@@ -62,7 +62,7 @@ const LoginPage = () => {
                         value={email}
                         onChange={({ target }) => setEmail(target.value)}
                         label="Email Address"
-                        placeholder="johndoe@example.com"
+                        placeholder="john@example.com"
                         type="text"
                     />
                     <Input

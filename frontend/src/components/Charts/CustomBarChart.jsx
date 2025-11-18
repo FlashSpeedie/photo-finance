@@ -13,7 +13,7 @@ const CustomBarChart = (props) => {
     const { data } = props;
 
     const getBarColor = (index) => {
-        return index % 2 === 0 ? '#78f55cff' : '#ccfbbeff';
+        return index % 2 === 0 ? '#875cf5' : '#cfbefb';
     };
 
     const CustomToolTip = ({ active, payload }) => {
