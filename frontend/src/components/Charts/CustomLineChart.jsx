@@ -21,8 +21,8 @@ const CustomLineChart = (props) => {
                 <AreaChart data={data}>
                     <defs>
                         <linearGradient id="incomeGradient" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%" stopColor="#875cf5" stopOpacity={0.4} />
-                            <stop offset="95%" stopColor="#875cf5" stopOpacity={0} />
+                            <stop offset="5%" stopColor="#6ef55cff" stopOpacity={0.4} />
+                            <stop offset="95%" stopColor="#78f55cff" stopOpacity={0} />
                         </linearGradient>
                     </defs>
                     <CartesianGrid stroke="none" />
@@ -32,11 +32,11 @@ const CustomLineChart = (props) => {
                     <Area
                         type="monotone"
                         dataKey="amount"
-                        stroke="#875cf5"
+                        stroke="#71f55cff"
                         strokeWidth={3}
                         fillOpacity={1}
                         fill="url(#incomeGradient)"
-                        dot={{ r: 3, fill: "#ab8df8" }}
+                        dot={{ r: 3, fill: "#94f88dff" }}
                     />
                 </AreaChart>
             </ResponsiveContainer>
