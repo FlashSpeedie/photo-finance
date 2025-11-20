@@ -2,7 +2,7 @@
 
 💡 Project Description
 
-Photo Finance is a modern tool built using the MERN stack (React frontend) to help you easily manage your personal money.
+Photo Finance is a modern tool built using the MERN(MongoDB, ExpressJS, ReactJS, NodeJS) stack and Gemini API key to help you easily manage your personal money.
 
 It does three main things:
 
@@ -14,13 +14,10 @@ Provides a secure and responsive design that works perfectly on your phone or de
 
 🚀 How to Use the App
 
-Sign Up / Log In to secure your personal finance data.
-
-Add Income when you get paid or receive money.
-
-Add Expense every time you spend money. You can organize it by category and even add an emoji icon!
-
-Check the Dashboard to instantly see your total balance and trends.
+1. Sign Up / Log In to secure your personal finance data.
+2. Add Income when you get paid or receive money.
+3. Add Expense every time you spend money. You can organize it by category and even add an emoji icon!
+4. Check the Dashboard to instantly see your total balance and trends.
 
 💻 How to Launch Code Locally (For Developers)
 
@@ -38,34 +35,32 @@ git clone [https://github.com/FlashSpeedie/photo-finance.git](https://github.com
 
 1. Frontend
 
-cd frontend
-
+<pre> cd frontend </pre>
 
 Install Dependencies:
 
-npm install
-
+<pre> npm install </pre>
 
 Start the Server:
 
-npm run dev
+<pre> npm run dev </pre>
 
 
 The application will open in your browser at a local address like http://localhost:5173.
 
 2. Backend
 
-cd backend
+<pre>cd backend</pre>
 
 
 Install Dependencies:
 
-npm install
+<pre>npm install</pre>
 
 
 Start the Server:
 
-npm start
+<pre>npm start</pre>
 
 
 The server is now running and ready to handle requests from the frontend.
