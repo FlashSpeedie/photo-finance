@@ -12,6 +12,15 @@ Shows you exactly where your money goes using clear, beautiful charts.
 
 Provides a secure and responsive design that works perfectly on your phone or desktop.
 
+## ✨ Key Features
+
+Receipt Scanning (Gemini API): Use the expense feature to upload an image of a physical receipt. The Gemini API uses OCR (Optical Character Recognition) to automatically read the details (like the total amount and merchant) and log the new expense for you.
+
+* Core Tracking: Track all income and expenses with customizable categories and emoji icons.
+* Visual Analytics: View your financial health using responsive charts powered by Recharts.
+* Security: Uses a secure login system for personal finance data.
+* Responsive Design: Works seamlessly on mobile, tablet, and desktop devices.
+
 ## 🚀 How to Use the App
 
 1. Sign Up / Log In to secure your personal finance data.
@@ -70,4 +79,5 @@ The server is now running and ready to handle requests from the frontend.
 API Connection (CORS): I had to spend extra time setting up CORS (Cross-Origin Resource Sharing) on the backend. This was necessary to allow the frontend and backend to talk to each other correctly, since they run on different ports.
 
 Chart Design: Making sure the Recharts graphs were responsive and resized without breaking the layout on small phone screens required custom CSS and careful component layout.
+
 
