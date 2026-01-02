@@ -78,9 +78,12 @@ The server is now running and ready to handle requests from the frontend.
 
 API Connection (CORS): I had to spend extra time setting up CORS (Cross-Origin Resource Sharing) on the backend. This was necessary to allow the frontend and backend to talk to each other correctly, since they run on different ports.
 
-This project was built starting with a MERN stack foundation from Build a Full-Stack MERN Expense Tracker | React, Node.js, MongoDB, Express | MERN Project by Time by Code. I chose this to learn the basics of database connectivity, and then I heavily modified the code to include my custom Gemini API receipt scanner and custom responsive CSS for the charts.
+I also struggled for 2 hours because the Gemini API was returning a string instead of a JSON object, so I had to write a regex function to clean the data before it hit the MongoDB.
 
 Chart Design: Making sure the Recharts graphs were responsive and resized without breaking the layout on small phone screens required custom CSS and careful component layout.
+
+
+This project was built starting with a MERN stack foundation from Build a Full-Stack MERN Expense Tracker | React, Node.js, MongoDB, Express | MERN Project by Time by Code. I chose this to learn the basics of database connectivity, and then I heavily modified the code to include my custom Gemini API receipt scanner and custom responsive CSS for the charts.
 
 
 
